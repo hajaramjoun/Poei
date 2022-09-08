@@ -7,8 +7,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class HomePage {
-    private By cssSelectorAccept = By.cssSelector("[data-cel-widget=sp-cc-accept]");
     private int TIME_OUT = 10;
+    private By cssSelectorAccept = By.cssSelector("[data-cel-widget=sp-cc-accept]");
+    private By cssSelectorInput = By.cssSelector("input[value='Go']");
+    private By cssSelectorBareSearch = By.cssSelector("input[aria-label='Rechercher']");
     private WebDriver driver;
 
     public HomePage(WebDriver driver) {
@@ -28,12 +30,15 @@ public class HomePage {
 
     ;
 
-//    public String SearchWithButton(String keyword) {
-//
-//        return "ff";
-//    }
-//
-//    ;
+    public void SearchWithButton(String keyword) {
+        WebElement searchGo = driver.findElement(cssSelectorInput);
+        WebElement searchBar = driver.findElement(cssSelectorBareSearch);
+        searchBar.sendKeys(keyword);
+        searchGo.click();
+
+    }
+
+    ;
 //
 //    public void SearchWithEnter(String keyword) {
 //
