@@ -5,7 +5,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-- /*   ProductPage
+ /*   ProductPage
         o    addToCart(): click ajouter au panier button
         o    refuseAppleCare() : click non merci
         o    openCart() : click cart button
@@ -18,18 +18,37 @@ import java.time.Duration;
         o    getSubtotalCart(): return subtotal text at the bottom of the cart
         o    getSubtotalBuybox(): return subtotal text in the buybox
 */
+
 public class ProductPage {
 
     private By cssSelectorAddCart = By.cssSelector("input#add-to-cart-button");
-//    private By cssSelectorInput = By.cssSelector("input[value='Go']");
-//    private By cssSelectorBareSearch = By.cssSelector("input[aria-label='Rechercher']");
+    private By cssSelectorNonMerci = By.cssSelector("[aria-labelledby='attachSiNoCoverage-announce']");
+    private By cssSelectorOpenPanier = By.cssSelector("[aria-labelledby='attach-sidesheet-view-cart-button-announce']");
     private WebDriver driver;
+    private final int TIMEOUT_COOKIE = 10;
+
+
+    public ProductPage(WebDriver driver) {
+        this.driver = driver;
+    }
+
     public void addToCart() {
+        WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(TIMEOUT_COOKIE));
         WebElement addElement = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input#add-to-cart-button")));
         addElement.click();
-//    }public void addToCart() {
-//        WebElement addElement = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input#add-to-cart-button")));
-//        addElement.click();
-//    }
 
+    }
+
+    public void openCart() {
+        WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(TIMEOUT_COOKIE));
+        WebElement addElement = wait.until(ExpectedConditions.elementToBeClickable(cssSelectorOpenPanier));
+        addElement.click();
+
+    }
+
+    public void refuseAppleCare() {
+        WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(TIMEOUT_COOKIE));
+        WebElement nonMerciElement = wait.until(ExpectedConditions.elementToBeClickable(cssSelectorNonMerci));
+        nonMerciElement.click();
+    }
 }
