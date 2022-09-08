@@ -59,7 +59,7 @@ public class TpDeuxieme {
         WebElement toutesMenu = driver.findElement(By.cssSelector("#nav-hamburger-menu"));
         WebElement meilleuresVentes = driver.findElement(By.cssSelector("[data-csa-c-content-id=nav_cs_bestsellers]"));
         WebElement amazonBasics = driver.findElement(By.cssSelector("[data-csa-c-content-id=nav_cs_amazonbasics]"));
-        WebElement meilleuresVentesLivres = driver.findElement(By.cssSelector("[data-csa-c-slot-id=desktop-5] h2.as-title-block-left"));
+        WebElement meilleuresVenteLivres = driver.findElement(By.cssSelector("[data-csa-c-slot-id=desktop-5] h2.as-title-block-left"));
 
         // Asserts
         Assert.assertTrue(logo.isDisplayed(), "The Amazon Logo is not displayed");
@@ -72,8 +72,8 @@ public class TpDeuxieme {
         Assert.assertTrue(amazonBasics.isDisplayed());
         Assert.assertEquals(amazonBasics.getText(), expectedAmazonBasics);
 
-        Assert.assertTrue(meilleuresVentesLivres.isDisplayed());
-        Assert.assertEquals(meilleuresVentesLivres.getText(), expectedVentesLivres);
+        Assert.assertTrue(meilleuresVenteLivres.isDisplayed());
+        Assert.assertEquals(meilleuresVenteLivres.getText(), expectedVentesLivres);
     }
 
     @Test
@@ -113,6 +113,7 @@ public class TpDeuxieme {
         categoriesSelect.selectByVisibleText("2");
         String titleElementActuel = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".a-truncate-full"))).getText();
         System.out.print(titleElementActuel);
+
         // Asserts
         /*  Assert.assertEquals(expectedtitleElement, titleElementActuel);*/
 
