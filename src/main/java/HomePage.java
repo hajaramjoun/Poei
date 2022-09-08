@@ -5,6 +5,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class HomePage {
     private int TIME_OUT = 10;
@@ -39,18 +40,20 @@ public class HomePage {
     }
 
     ;
-//
+
+    //
 //    public void SearchWithEnter(String keyword) {
 //
 //    }
 //
 //    ;
 //
-//    public void openSearchResult(int index) {
-//
-//    }
-//
-//    ;
+    public void openSearchResult(int index) {
+        List<WebElement> resulstElement = driver.findElements(By.cssSelector("img.s-image"));
+        resulstElement.get(index).click();
+    }
+
+    ;
 
 
 }
