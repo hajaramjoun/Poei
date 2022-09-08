@@ -10,13 +10,15 @@ import org.testng.annotations.*;
 import java.time.Duration;
 
 public class Tp1 {
-    WebDriver driver = new ChromeDriver();
-
+    WebDriver driver;
     @BeforeMethod
     public void stUp() {
+        WebDriver driver = new ChromeDriver();
         driver.get("https://www.amazon.fr/");
         driver.manage().window().maximize();
     }
+
+
 
     @Test
     public void test() {

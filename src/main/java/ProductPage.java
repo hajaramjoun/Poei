@@ -32,23 +32,24 @@ public class ProductPage {
         this.driver = driver;
     }
 
-    public void addToCart() {
+    public ProductPage addToCart() {
         WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(TIMEOUT_COOKIE));
         WebElement addElement = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input#add-to-cart-button")));
         addElement.click();
-
+        return this;
     }
-
-    public void openCart() {
-        WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(TIMEOUT_COOKIE));
-        WebElement addElement = wait.until(ExpectedConditions.elementToBeClickable(cssSelectorOpenPanier));
-        addElement.click();
-
-    }
-
-    public void refuseAppleCare() {
+    public ProductPage refuseAppleCare() {
         WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(TIMEOUT_COOKIE));
         WebElement nonMerciElement = wait.until(ExpectedConditions.elementToBeClickable(cssSelectorNonMerci));
         nonMerciElement.click();
+        return this;
     }
+    public CartPage openCart() {
+        WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(TIMEOUT_COOKIE));
+        WebElement addElement = wait.until(ExpectedConditions.elementToBeClickable(cssSelectorOpenPanier));
+        addElement.click();
+    return new CartPage(driver);
+    }
+
+
 }
