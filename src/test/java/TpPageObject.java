@@ -1,44 +1,51 @@
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import javax.swing.*;
 
 public class TpPageObject {
 
 
     WebDriver driver = new ChromeDriver();
+
     @BeforeMethod
     public void stUp() {
         driver.get("https://www.amazon.fr/");
         driver.manage().window().maximize();
     }
 
-@Test
-public void testHomepage() {
-    //Arrange
-    String expectedtitleElement = "Apple iPhone 13 Pro Max (256 Go) - Vert Alpin";
+    @Test
+    public void testHomepage() {
+        //Arrange
+        String expectedtitleElement = "Apple iPhone 13 Pro Max (256 Go) - Vert Alpin";
 
-    //Act
-    int index =1;
-   String homePage = new HomePage(driver).acceptCookie().SearchWithButton(expectedtitleElement);
-    homePage.openSearchResult(1);
-    ProductPage productPage = new ProductPage(driver);
-    productPage.addToCart();
+        //Act
+        int index = 1;
+   /*String homePage = new HomePage(driver).acceptCookie().SearchWithButton(expectedtitleElement);
+    homePage.openSearchResult(1);*/
+        ProductPage productPage = new ProductPage(driver);
+        productPage.addToCart();
+        Actions action = new Actions(driver);
     /*productPage.openCart();
     productPage.refuseAppleCare();*/
 
 
-    // Asserts
-    /*  Assert.assertEquals(expectedtitleElement, titleElementActuel);*/
+        // Asserts
+        /*  Assert.assertEquals(expectedtitleElement, titleElementActuel);*/
 
-}
-@AfterMethod
-public void teardown() {
-    driver.quit();
+    }
+
+    @AfterMethod
+    public void teardown() {
+        driver.quit();
 
 
-}
+    }
 
 
 }

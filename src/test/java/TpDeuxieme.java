@@ -2,6 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -98,7 +99,10 @@ public class TpDeuxieme {
         bouttonAccept.click();
         WebElement searchGo = driver.findElement(By.cssSelector("input[value='Go']"));
         WebElement searchBar = driver.findElement(By.cssSelector("input[aria-label='Rechercher']"));
-        searchBar.sendKeys("Apple iPhone 13 Pro Max (256 Go) - Vert Alpin");
+        Actions action = new Actions(driver);
+        WebElement loginElement = driner.fin;
+        action.moveToElement(loginElement)
+      /*  searchBar.sendKeys("Apple iPhone 13 Pro Max (256 Go) - Vert Alpin");
         searchGo.click();
         WebElement firstElement = driver.findElement(By.cssSelector("[data-csa-c-pos='1']"));
         firstElement.click();
@@ -112,7 +116,7 @@ public class TpDeuxieme {
         Select categoriesSelect = new Select(dropdown);
         categoriesSelect.selectByVisibleText("2");
         String titleElementActuel = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".a-truncate-full"))).getText();
-        System.out.print(titleElementActuel);
+        System.out.print(titleElementActuel);*/
 
         // Asserts
         /*  Assert.assertEquals(expectedtitleElement, titleElementActuel);*/
