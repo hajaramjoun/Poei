@@ -105,7 +105,7 @@ public class TpDeuxieme {
       /*  searchBar.sendKeys("Apple iPhone 13 Pro Max (256 Go) - Vert Alpin");
         searchGo.click();
         WebElement firstElement = driver.findElement(By.cssSelector("[data-csa-c-pos='1']"));
-        firstElement.click();
+        firstElement.click()  ;
         WebElement addElement = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input#add-to-cart-button")));
         addElement.click();
         WebElement nonMerciElement = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("[aria-labelledby='attachSiNoCoverage-announce']")));
