@@ -1,12 +1,10 @@
+import amazon.ProductPage;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-import javax.swing.*;
 
 public class TpPageObject {
 
@@ -26,7 +24,7 @@ public class TpPageObject {
 
         //Act
         int index = 1;
-   /*String homePage = new HomePage(driver).acceptCookie().SearchWithButton(expectedtitleElement);
+   /*String homePage = new amazon.HomePage(driver).acceptCookie().SearchWithButton(expectedtitleElement);
     homePage.openSearchResult(1);*/
         ProductPage productPage = new ProductPage(driver);
         productPage.addToCart();
@@ -53,8 +51,8 @@ public class TpPageObject {
 //    public void testPO() {
 //        final String keyword = "iPhone 13";
 //
-//        HomePage homePage = new HomePage(driver);
-//        CartPage cartPage = homePage.acceptCookie()
+//        amazon.HomePage homePage = new amazon.HomePage(driver);
+//        amazon.CartPage cartPage = homePage.acceptCookie()
 //                .searchWithButton(keyword)
 //                .openSearchResult(0)
 //                .addToCart()
