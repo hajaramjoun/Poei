@@ -100,8 +100,8 @@ public class TpDeuxieme {
         WebElement searchGo = driver.findElement(By.cssSelector("input[value='Go']"));
         WebElement searchBar = driver.findElement(By.cssSelector("input[aria-label='Rechercher']"));
         Actions action = new Actions(driver);
-        WebElement loginElement = driner.fin;
-        action.moveToElement(loginElement)
+        WebElement loginButton = driver.findElement(By.cssSelector("#nav-link-accountList"));
+        action.moveToElement(loginButton);
       /*  searchBar.sendKeys("Apple iPhone 13 Pro Max (256 Go) - Vert Alpin");
         searchGo.click();
         WebElement firstElement = driver.findElement(By.cssSelector("[data-csa-c-pos='1']"));
