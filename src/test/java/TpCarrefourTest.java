@@ -21,7 +21,7 @@ public class TpCarrefourTest {
 
         //Act
         HomePage homePage = new HomePage(driver);
-        homePage.acceptCookie().openMaisonsLoisirs().openRayons();
+        homePage./*acceptCookie().*/openMaisonsLoisirs().openRayons();
 
 
         // Asserts
