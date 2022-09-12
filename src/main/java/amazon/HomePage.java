@@ -1,3 +1,5 @@
+package amazon;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,7 +23,7 @@ public class HomePage {
     /*      o    acceptCookie(): click accept cookie button
       o    SearchWithButton(String keyword): enter keyword in search bar and click in button
       o    SearchWithEnter(String keyword): enter keyword in search bar and press enter
-  -    SearchResultPage
+  -    amazon.SearchResultPage
       o    openSearchResult(int index): click the search result with index n
   */
     public HomePage acceptCookie() {

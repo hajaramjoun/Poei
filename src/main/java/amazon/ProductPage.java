@@ -1,3 +1,5 @@
+package amazon;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -5,11 +7,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
- /*   ProductPage
+ /*   amazon.ProductPage
         o    addToCart(): click ajouter au panier button
         o    refuseAppleCare() : click non merci
         o    openCart() : click cart button
-        -    CartPage
+        -    amazon.CartPage
         o    selectQuantity(int quantity): select quantity in quantity dropdown
         o    getFirstProductName(): return text of first product name
         o    getFirstProductCapacity(): return text of first product capacity
