@@ -12,7 +12,7 @@ public class HomePage {
     private WebDriver driver;
     private final int TIMEOUT_COOKIE = 10;
 
-    private By cssSelectorAccept = By.cssSelector("button#onetrust-accept-btn-handler");
+    private By cssSelectorAccept = By.cssSelector("#onetrust-accept-btn-handler");
     private By cssSelectorMaisonLoisires = By.cssSelector("[for='header-tab-non-food']");
 
     public HomePage(WebDriver driver) {
