@@ -7,17 +7,19 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class BestSellerPage {
     WebDriver driver;
     private final int TIMEOUT_COOKIE = 10;
     ///*           *****************  - Cliquer sur "Voir" dans le premier resultat de Sports & Loisir (Draisienne pliable) ****************               */  //////////////////////////
-   By cssSelectorElement= By.cssSelector("input[value='Go']");;
-    public ProductPage openFirstElement(int index) {
-        WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(TIMEOUT_COOKIE));
-
-        WebElement bouttonMaisonLoisires = wait.until(ExpectedConditions.elementToBeClickable(cssSelectorElement));
-        bouttonMaisonLoisires.click();
+   By cssSelectorFirstElement = By.xpath(("(//*[@title=\"Montre connectée avec thermometre BLAUPUNKT\"])[1]"));;
+    public ProductPage openFirstElement() {
+//        WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(TIMEOUT_COOKIE));
+//
+//     WebElement bouttonFirstElement = wait.until(ExpectedConditions.elementToBeClickable(cssSelectorFirstElement));
+//
+//        bouttonFirstElement.click();
         return new ProductPage();
     }
 }
