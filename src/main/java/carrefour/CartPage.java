@@ -1,4 +1,4 @@
-package carrefour;
+package main.java.carrefour;
 
 public class CartPage {
 

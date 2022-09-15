@@ -1,5 +1,6 @@
-package carrefour;
+package main.java.carrefour;
 
+import main.java.carrefour.ProductPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
