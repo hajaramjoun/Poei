@@ -2,8 +2,6 @@ package test.java;
 
 import main.java.carrefour.HomePage;
 import main.java.commun.SetupTeardown;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class TpCarrefourTest2 extends SetupTeardown {
@@ -24,7 +22,7 @@ public class TpCarrefourTest2 extends SetupTeardown {
 
 
         //Act
-        HomePage homePage = new HomePage(driver);
+        HomePage homePage = new HomePage(driver, nnnnn);
         homePage.acceptCookie().openMaisonsLoisirs().openRayons().openFirstElement();
 
 
