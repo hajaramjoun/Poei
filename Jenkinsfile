@@ -10,8 +10,8 @@ pipeline {
         }
     }
     post {
-    always {
-    step([$class:'publisher',reportFilenamePattern:'**/testng-results.xml'])
-    }
-    }
+            always {
+              step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
+            }
+          }
 }
