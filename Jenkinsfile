@@ -2,15 +2,16 @@ pipeline {
     agent any
 
     stages {
-        stage('Init') {
-            steps {
-                echo "Testing..."
-            }
-        }
+
         stage('Run') {
             steps {
-                 bat "mvn test"
+                 bat "mvn test"//sh Linux
             }
         }
+    }
+    post {
+    always {
+    step([$class:'publisher',reportFilenamePattern:'**/testng-results.xml'])
+    }
     }
 }
