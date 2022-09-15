@@ -22,7 +22,7 @@ public class TpCarrefourTest2 extends SetupTeardown {
 
 
         //Act
-        HomePage homePage = new HomePage(driver, nnnnn);
+        HomePage homePage = new HomePage(driver);
         homePage.acceptCookie().openMaisonsLoisirs().openRayons().openFirstElement();
 
 
