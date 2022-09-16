@@ -1,8 +1,14 @@
 package test.java;
 
 import main.java.carrefour.HomePage;
+import main.java.commun.ImportResultsXry;
 import main.java.commun.SetupTeardown;
 import org.testng.annotations.Test;
+
+import java.io.IOException;
+import java.security.KeyManagementException;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
 
 public class TpCarrefourTest2 extends SetupTeardown {
 
@@ -17,9 +23,8 @@ public class TpCarrefourTest2 extends SetupTeardown {
 
 
     @Test
-    public void test2() {
+    public void test2() throws IOException, NoSuchAlgorithmException, KeyStoreException, KeyManagementException {
         //Arrange
-
 
         //Act
         HomePage homePage = new HomePage(driver);

@@ -18,17 +18,6 @@ public class TpCarrefourTest extends SetupTeardown {
 //    RemoteWebDriver driver = new RemoteWebDriver(new URL(" http://192.168.121.16:4444"), options);//remote hub and node
 
 
-    @BeforeMethod
-    @Override
-    public void setUp() {
-        super.setUp();
-    }
-
-    @AfterMethod
-    @Override
-    public void teardown() {
-        super.teardown();
-    }
 
     @Test
     public void test() {
